@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@vercel/node": "^4.0.0",
     "dotenv": "^17.2.3",
     "express": "^5.1.0",
     "mongodb": "^6.20.0",
@@ -18,5 +19,13 @@
   },
   "author": "",
   "license": "ISC",
-  "devDependencies": {}
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/UsmanKhan321123/Mongo_db-CRUD.git"
+  },
+  "bugs": {
+    "url": "https://github.com/UsmanKhan321123/Mongo_db-CRUD/issues"
+  },
+  "homepage": "https://github.com/UsmanKhan321123/Mongo_db-CRUD#readme"
 }

@@ -72,30 +72,34 @@ productRouter.delete("/:id", async (req, res) => {
     if (productID) {
       await productID.deleteOne(productID);
       res.json({
-        message: "successfully deleted the user",
+        message: "successfully deleted the product",
         code: 200,
       });
     } else {
       res.json({
-        message: "can't find the user",
+        message: "can't find the product",
       });
     }
   } catch (error) {
     res.json({
-      message: "Error in seleting the user",
+      message: "Error in deleting the product",
     });
   }
 });
 
 productRouter.patch("/:id", async (req, res) => {
-  let{ id }= req.params;
-  let  { productName, price, category, variations } = req.body;
+  let { id } = req.params;
+  let { productName, price, category, variations } = req.body;
   if (!productName || !price || !category || !variations) {
     res.json({ message: "Please give the details correctly" });
   } else {
     try {
-      let updatedProduct = {productName,price,category,variations}
-      let productAfterUpdate = await productModel.findByIdAndUpdate(id, updatedProduct,{new: true});
+      let updatedProduct = { productName, price, category, variations };
+      let productAfterUpdate = await productModel.findByIdAndUpdate(
+        id,
+        updatedProduct,
+        { new: true }
+      );
       res.json({
         message: "successfully updated the product",
         productAfterUpdate,
